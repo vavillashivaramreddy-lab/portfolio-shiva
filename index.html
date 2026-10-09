@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>V. Shivaram reddy | AI & ML Portfolio</title>
+
+    <style>
+
+        /* =========================
+           BASIC SETTINGS
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #07111f;
+            color: white;
+            line-height: 1.6;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(7, 17, 31, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #20344f;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: auto;
+            padding: 18px 30px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: #00d9ff;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #00d9ff;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        #home {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            max-width: 1200px;
+            margin: auto;
+
+            padding: 130px 30px 70px;
+        }
+
+        .hero-content {
+            max-width: 650px;
+        }
+
+        .small-text {
+            color: #00d9ff;
+            font-weight: bold;
+            letter-spacing: 4px;
+            margin-bottom: 10px;
+        }
+
+        .hero-content h1 {
+            font-size: 65px;
+            margin-bottom: 5px;
+        }
+
+        .hero-content h2 {
+            color: #00d9ff;
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            color: #b8c4d4;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        /* =========================
+           BUTTONS
+        ========================= */
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 13px 25px;
+            border-radius: 30px;
+
+            background: #00d9ff;
+            color: #06101d;
+
+            text-decoration: none;
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0, 217, 255, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #00d9ff;
+            border: 2px solid #00d9ff;
+        }
+
+        /* =========================
+           PROFILE CIRCLE
+        ========================= */
+
+        .profile-area {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile-circle {
+            width: 280px;
+            height: 280px;
+
+            border-radius: 50%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 65px;
+            font-weight: bold;
+
+            color: #00d9ff;
+
+            border: 5px solid #00d9ff;
+
+            box-shadow:
+                0 0 25px #00d9ff,
+                0 0 70px rgba(0, 217, 255, 0.2);
+
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+
+        }
+
+        /* =========================
+           COMMON SECTION
+        ========================= */
+
+        section {
+            max-width: 1200px;
+            margin: auto;
+            padding: 100px 30px;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #00d9ff;
+            font-size: 40px;
+            margin-bottom: 50px;
+        }
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about-card {
+            max-width: 900px;
+            margin: auto;
+
+            padding: 40px;
+
+            background: #0d1b2e;
+
+            border: 1px solid #20344f;
+            border-radius: 20px;
+
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+
+        .about-card p {
+            color: #c0cad8;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .skills {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .skill {
+            background: #0d1b2e;
+
+            padding: 30px;
+
+            text-align: center;
+
+            border-radius: 18px;
+
+            border: 1px solid #20344f;
+
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            transform: translateY(-8px);
+            border-color: #00d9ff;
+
+            box-shadow:
+                0 10px 30px
+                rgba(0, 217, 255, 0.15);
+        }
+
+        .skill-icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .skill h3 {
+            color: #00d9ff;
+            margin-bottom: 8px;
+        }
+
+        .skill p {
+            color: #aeb9c9;
+        }
+
+        /* =========================
+           PROJECTS
+        ========================= */
+
+        .projects {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .project {
+            background: #0d1b2e;
+
+            padding: 30px;
+
+            border-radius: 18px;
+
+            border: 1px solid #20344f;
+
+            transition: 0.3s;
+        }
+
+        .project:hover {
+            transform: translateY(-8px);
+
+            border-color: #00d9ff;
+
+            box-shadow:
+                0 10px 30px
+                rgba(0, 217, 255, 0.15);
+        }
+
+        .project-icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .project h3 {
+            color: #00d9ff;
+            margin-bottom: 12px;
+        }
+
+        .project p {
+            color: #b7c2d2;
+            margin-bottom: 20px;
+        }
+
+        .project a {
+            color: #00d9ff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* =========================
+           EDUCATION
+        ========================= */
+
+        .education {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .education-item {
+            background: #0d1b2e;
+
+            padding: 30px;
+
+            margin-bottom: 20px;
+
+            border-left: 5px solid #00d9ff;
+
+            border-radius: 10px;
+        }
+
+        .education-item h3 {
+            color: #00d9ff;
+        }
+
+        .education-item p {
+            color: #b7c2d2;
+        }
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact-container {
+            max-width: 700px;
+            margin: auto;
+
+            background: #0d1b2e;
+
+            padding: 40px;
+
+            border-radius: 20px;
+
+            border: 1px solid #20344f;
+
+            text-align: center;
+        }
+
+        .contact-container p {
+            color: #c0cad8;
+            font-size: 18px;
+            margin: 15px;
+        }
+
+        .contact-container a {
+            color: #00d9ff;
+            text-decoration: none;
+        }
+
+        /* =========================
+           SOCIAL BUTTONS
+        ========================= */
+
+        .social {
+            margin-top: 25px;
+
+            display: flex;
+            justify-content: center;
+
+            gap: 15px;
+        }
+
+        .social a {
+            width: 45px;
+            height: 45px;
+
+            border: 1px solid #00d9ff;
+
+            border-radius: 50%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 18px;
+
+            transition: 0.3s;
+        }
+
+        .social a:hover {
+            background: #00d9ff;
+            color: #07111f;
+            transform: translateY(-5px);
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            text-align: center;
+
+            padding: 25px;
+
+            background: #040b14;
+
+            color: #8290a3;
+
+            border-top: 1px solid #20344f;
+        }
+
+        /* =========================
+           SCROLL TOP BUTTON
+        ========================= */
+
+        #topButton {
+            position: fixed;
+
+            right: 25px;
+            bottom: 25px;
+
+            width: 45px;
+            height: 45px;
+
+            border: none;
+
+            border-radius: 50%;
+
+            background: #00d9ff;
+
+            color: #07111f;
+
+            font-size: 20px;
+
+            cursor: pointer;
+
+            display: none;
+
+            z-index: 999;
+        }
+
+        /* =========================
+           MOBILE RESPONSIVE
+        ========================= */
+
+        @media (max-width: 850px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
+            }
+
+            #home {
+                flex-direction: column;
+                text-align: center;
+                gap: 50px;
+            }
+
+            .hero-content h1 {
+                font-size: 48px;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .skills,
+            .projects {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+        @media (max-width: 500px) {
+
+            .hero-content h1 {
+                font-size: 38px;
+            }
+
+            .hero-content h2 {
+                font-size: 23px;
+            }
+
+            .profile-circle {
+                width: 210px;
+                height: 210px;
+                font-size: 50px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 200px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <header>
+
+        <nav>
+
+            <div class="logo">
+                V.Shivaram
+            </div>
+
+            <ul>
+
+                <li>
+                    <a href="#home">Home</a>
+                </li>
+
+                <li>
+                    <a href="#about">About</a>
+                </li>
+
+                <li>
+                    <a href="#skills">Skills</a>
+                </li>
+
+                <li>
+                    <a href="#projects">Projects</a>
+                </li>
+
+                <li>
+                    <a href="#education">Education</a>
+                </li>
+
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         HOME
+    ========================== -->
+
+    <section id="home">
+
+        <div class="hero-content">
+
+            <div class="small-text">
+                HELLO, I'M
+            </div>
+
+            <h1>
+                V. shivaram
+            </h1>
+
+            <h2>
+                AI & Machine Learning Student
+            </h2>
+
+            <p>
+                Welcome to my personal portfolio.
+                I am a B.Tech student interested in
+                Artificial Intelligence, Machine Learning,
+                Web Development and modern technologies.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#projects" class="btn">
+                    View Projects
+                </a>
+
+                <a href="#contact"
+                   class="btn btn-outline">
+                    Contact Me
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="profile-area">
+
+            <div class="profile-circle">
+                AI
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
+    <section id="about">
+
+        <h2 class="section-title">
+            About Me
+        </h2>
+
+        <div class="about-card">
+
+            <p>
+                👋 Hello! I am <strong>V. Shivaram</strong>,
+                a B.Tech student specializing in
+                Artificial Intelligence and Machine Learning.
+            </p>
+
+            <p>
+                I enjoy learning programming, creating websites,
+                exploring Artificial Intelligence and developing
+                useful technology-based projects.
+            </p>
+
+            <p>
+                My goal is to continuously improve my technical
+                knowledge and become a skilled technology
+                professional.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SKILLS
+    ========================== -->
+
+    <section id="skills">
+
+        <h2 class="section-title">
+            My Skills
+        </h2>
+
+        <div class="skills">
+
+
+            <div class="skill">
+
+                <div class="skill-icon">
+                    🌐
+                </div>
+
+                <h3>
+                    HTML
+                </h3>
+
+                <p>
+                    Creating structured websites
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-icon">
+                    🎨
+                </div>
+
+                <h3>
+                    CSS
+                </h3>
+
+                <p>
+                    Designing attractive websites
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-icon">
+                    ⚡
+                </div>
+
+                <h3>
+                    JavaScript
+                </h3>
+
+                <p>
+                    Creating interactive websites
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-icon">
+                    🐍
+                </div>
+
+                <h3>
+                    Python
+                </h3>
+
+                <p>
+                    Programming and AI development
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-icon">
+                    🤖
+                </div>
+
+                <h3>
+                    Artificial Intelligence
+                </h3>
+
+                <p>
+                    Understanding AI concepts
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-icon">
+                    🧠
+                </div>
+
+                <h3>
+                    Machine Learning
+                </h3>
+
+                <p>
+                    Learning ML algorithms
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROJECTS
+    ========================== -->
+
+    <section id="projects">
+
+        <h2 class="section-title">
+            My Projects
+        </h2>
+
+        <div class="projects">
+
+
+            <div class="project">
+
+                <div class="project-icon">
+                    🌱
+                </div>
+
+                <h3>
+                    AI Disease Expert System
+                </h3>
+
+                <p>
+                    A rule-based AI system that uses
+                    entered symptoms to identify a
+                    possible disease condition.
+                </p>
+
+                <a href="#">
+                    View Project →
+                </a>
+
+            </div>
+
+
+            <div class="project">
+
+                <div class="project-icon">
+                    🔐
+                </div>
+
+                <h3>
+                    Password Strength Analyzer
+                </h3>
+
+                <p>
+                    A website that evaluates password
+                    strength and displays Weak,
+                    Medium or Strong results.
+                </p>
+
+                <a href="#">
+                    View Project →
+                </a>
+
+            </div>
+
+
+            <div class="project">
+
+                <div class="project-icon">
+                    📚
+                </div>
+
+                <h3>
+                    Student Attendance System
+                </h3>
+
+                <p>
+                    A web-based system designed to
+                    manage and track student attendance.
+                </p>
+
+                <a href="#">
+                    View Project →
+                </a>
+
+            </div>
+
+
+            <div class="project">
+
+                <div class="project-icon">
+                    💡
+                </div>
+
+                <h3>
+                    Automatic Room Light
+                </h3>
+
+                <p>
+                    An interactive project that demonstrates
+                    automatic room lighting using
+                    sensor-based concepts.
+                </p>
+
+                <a href="#">
+                    View Project →
+                </a>
+
+            </div>
+
+
+            <div class="project">
+
+                <div class="project-icon">
+                    🌾
+                </div>
+
+                <h3>
+                    Agriculture Decision System
+                </h3>
+
+                <p>
+                    An AI-based concept designed to help
+                    with basic agricultural decision making.
+                </p>
+
+                <a href="#">
+                    View Project →
+                </a>
+
+            </div>
+
+
+            <div class="project">
+
+                <div class="project-icon">
+                    💻
+                </div>
+
+                <h3>
+                    Personal Portfolio
+                </h3>
+
+                <p>
+                    A responsive personal portfolio website
+                    created using HTML, CSS and JavaScript.
+                </p>
+
+                <a href="#">
+                    Current Project →
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         EDUCATION
+    ========================== -->
+
+    <section id="education">
+
+        <h2 class="section-title">
+            Education
+        </h2>
+
+        <div class="education">
+
+
+            <div class="education-item">
+
+                <h3>
+                    🎓 B.Tech – Artificial Intelligence & Machine Learning
+                </h3>
+
+                <p>
+                    Currently Pursuing
+                </p>
+
+                <p>
+                    Interested in AI, ML, Programming and Web Development.
+                </p>
+
+            </div>
+
+
+            <div class="education-item">
+
+                <h3>
+                    📘 Intermediate
+                </h3>
+
+                <p>
+                    Completed
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <section id="contact">
+
+        <h2 class="section-title">
+            Contact Me
+        </h2>
+
+        <div class="contact-container">
+
+            <p>
+                👤 <strong>V. Shivaram Reddy</strong>
+            </p>
+
+            <!-- CHANGE YOUR EMAIL HERE -->
+
+            <p>
+                📧
+                <a href="mailto:yourmail@gmail.com">
+                    vavillashivaramreddy@gmail.com
+                </a>
+            </p>
+
+            <!-- CHANGE YOUR PHONE NUMBER HERE -->
+
+            <p>
+                📱
+                <a href="tel:+910000000000">
+                    +91 8309099002
+                </a>
+            </p>
+
+            <p>
+                📍 India
+            </p>
+
+
+            <div class="social">
+
+                <!-- Replace # with your actual links -->
+
+                <a href="#" title="GitHub">
+                    GitHub
+                </a>
+
+                <a href="#" title="LinkedIn">
+                    in
+                </a>
+
+                <a href="#" title="Instagram">
+                    ◎
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <p>
+            © 2026 v. Shivaram
+            | AI & ML Student
+        </p>
+
+        <p>
+            Designed & Developed by v. Shivaram
+        </p>
+
+    </footer>
+
+
+    <!-- =========================
+         TOP BUTTON
+    ========================== -->
+
+    <button id="topButton"
+            onclick="goTop()">
+        ↑
+    </button>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        /* Show/Hide Top Button */
+
+        window.addEventListener("scroll", function() {
+
+            const button =
+                document.getElementById("topButton");
+
+            if (window.scrollY > 400) {
+
+                button.style.display = "block";
+
+            } else {
+
+                button.style.display = "none";
+
+            }
+
+        });
+
+
+        /* Go to top */
+
+        function goTop() {
+
+            window.scrollTo({
+
+                top: 0,
+
+                behavior: "smooth"
+
+            });
+
+        }
+
+
+        /* Navigation smooth scrolling */
+
+        document.querySelectorAll("nav a")
+        .forEach(function(link) {
+
+            link.addEventListener("click", function(event) {
+
+                event.preventDefault();
+
+                const target =
+                    document.querySelector(
+                        this.getAttribute("href")
+                    );
+
+                target.scrollIntoView({
+
+                    behavior: "smooth"
+
+                });
+
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>
